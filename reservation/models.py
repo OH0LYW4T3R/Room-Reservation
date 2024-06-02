@@ -8,6 +8,8 @@ class Reservation(models.Model):
     reason = models.CharField(max_length=255)
     building = models.CharField(max_length=255)
     floor = models.IntegerField()
+    year = models.IntegerField()
+    month = models.IntegerField()
     day = models.IntegerField()
     start_time = models.TimeField()
     room = models.IntegerField()

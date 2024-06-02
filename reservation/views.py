@@ -44,7 +44,7 @@ class ReservationViewSet(viewsets.ModelViewSet):
         return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
     
     def list(self, request, *args, **kwargs):
-        queryset = Reservation.objects.filter(building=request.query_params.get('building'), floor=request.query_params.get('floor'), day=request.query_params.get('day'), room=request.query_params.get('room'))
+        queryset = Reservation.objects.filter(building=request.query_params.get('building'), floor=request.query_params.get('floor'), day=request.query_params.get('day'), month=request.query_params.get('month'), year=request.query_params.get('year'), room=request.query_params.get('room'))
 
         page = self.paginate_queryset(queryset)
         if page is not None:
